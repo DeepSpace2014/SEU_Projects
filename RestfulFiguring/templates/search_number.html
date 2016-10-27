@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <script type="application/javascript" src="../static/jquery-2.2.2.min.js"></script>
+    <script type="application/javascript" src="../static/highcharts.js"></script>
+    <script type="application/javascript" src="../static/js/moment.min.js"></script>
+    <script type="application/javascript" src="../static/js/bootstrap.min.js"></script>
+    <script type="application/javascript" src="../static/js/jquery-ui.min.js"></script>
+    <script type="application/javascript" src="../static/css/jquery-ui.min.css"></script>
+
+    <script type="application/javascript">
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+
+    </script>
+    <style>
+        .container {
+            border-color: #b92c28;
+            border-width: medium;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>for desc</title>
+</head>
+<body>
+
+
+<div class="row">
+
+    <div class="col-lg-8 col-lg-offset-4">
+        <form class="form-inline" action="search_number">
+            <div class="form-group">
+                <label for="exampleInputName2">车牌号:</label>
+                <input type="text" class="form-control" name='car_number'>
+            </div>
+
+            <button type="submit" class="btn btn-default">submit</button>
+        </form>
+
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-lg-6 col-lg-offset-4">
+
+        <table class="table">
+            {% if data %}
+                <p>{{ data['car_number'] }}搜索结果:</p>
+                {% for item in data['date'] %}
+
+                    <tr>
+                        <td><a href="show_figure?car={{ data['car_number'] }}&date={{ item }}">{{ item }}</a> </td>
+                    </tr>
+
+                {% endfor %}
+            {% endif %}
+        </table>
+    </div>
+</div>
+</body>
+</html>
