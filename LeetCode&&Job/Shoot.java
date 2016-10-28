@@ -18,7 +18,7 @@ public class Shoot {
 	static String str = "";
 
 	public static void main(String[] args) {
-		// 开枪的总数
+		// 当前得分总数
 		int boomCount = 0;
 		Stack<Integer> st = new Stack<Integer>();
 		getResult(st, time, boomCount);
