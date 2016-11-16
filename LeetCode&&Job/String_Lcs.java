@@ -7,7 +7,7 @@
  * input:   abcde   bdbcd
  * output:  bcd
  * 使用动态规划的思想，时间复杂度及空间复杂度都为为O(M*N)。
- * dp[i][j] 表示字符串一中第i个字符和字符串2中第j个字符作为结尾的最长公共子串的长度
+ * dp[i][j] 表示字符串一中第i个字符和字符串2中第j个字符作为结尾的最长公共子串的长度.
  */
 
 import java.util.Scanner;
